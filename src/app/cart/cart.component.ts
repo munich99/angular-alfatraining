@@ -21,9 +21,6 @@ export class CartComponent {
       this.items = this.cartService.getItems();
       console.log(this.items,"items")
 
-      this.items = this.cartService.getItems();    
-      console.log(this.items,"this.items");
-
       // Variablen Deklaration für Lieferadresse aus dme Formular
       this.checkoutForms = this.formBuilder.group(  {name:'', adress:''}  );      
     }
@@ -32,8 +29,13 @@ export class CartComponent {
       // Verbraucher Daten werden an den Server/Backend geschickt
       console.warn("Ihre Bestellung wurde jetz übermittelt", customerData)
       // Löschen der gesamten Bestellung
-      this.items = this.cartService.removeItems();
+      this.clearList();
       // Löschen der Zustellungs Informationen
       this.checkoutForms.reset();
+    }
+
+    clearList(){
+      // Bestellliste löschen
+      this.items = this.cartService.removeItems();
     }
 }
