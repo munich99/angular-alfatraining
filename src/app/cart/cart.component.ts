@@ -11,16 +11,15 @@ import { CartService } from '../cart.service';
 })
 export class CartComponent {
 
-  items;
+  items;  
   checkoutForms;
+  thx:boolean = false;
 
   constructor(
     private cartService:CartService,
-    private  formBuilder:FormBuilder) { 
-      //alert("zuerst") (erscheint vom der Methode ngOnInit() )
+    private  formBuilder:FormBuilder) {       
       this.items = this.cartService.getItems();
-      console.log(this.items,"items")
-
+      
       // Variablen Deklaration für Lieferadresse aus dme Formular
       this.checkoutForms = this.formBuilder.group(  {name:'', adress:''}  );      
     }
@@ -32,6 +31,8 @@ export class CartComponent {
       this.clearList();
       // Löschen der Zustellungs Informationen
       this.checkoutForms.reset();
+      // dankes Text
+      this.thx = !this.thx;
     }
 
     clearList(){

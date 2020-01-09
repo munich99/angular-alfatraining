@@ -5,9 +5,9 @@
 <div class="cart-item" *ngFor="let item of items; index as orderId">
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
-  <span (click)="clearArticle(orderId)">{{ orderId }}</span>
+  <span (click)="clearArticle(orderId)">[x]</span>
 </div>
-<form [formGroup]="checkoutForms" (ngSubmit)="onSubmit(checkoutForms.value)">
+<form *ngIf="items != 0" [formGroup]="checkoutForms" (ngSubmit)="onSubmit(checkoutForms.value)">
   <div> 
     <label for="name"> <!-- label auch für Barrierefreiheit/Reader-->
       Name
@@ -24,6 +24,11 @@
   <button class="button" type="submit">Bestellung verbindlich abgeben</button>
 </form>
 
+<div *ngIf="thx">
+  <h4>Vielen Dank für Ihre Bestellung!<span>Sie erhalten Ihren Artikel in kürze</span></h4>
+  
+</div>
+
 <a [routerLink]="['/shipping']">Versandkosten</a>
 <a [routerLink]="['/']">Zurück zu den Artikeln</a>
-<a type="button" (click)="clearList()">Bestellliste löschen</a>
+<a *ngIf="items != 0" type="button" (click)="clearList()">Bestellliste löschen</a>

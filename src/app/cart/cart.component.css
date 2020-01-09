@@ -1,6 +1,11 @@
 form{
   margin-bottom: 1em
 }
+
 a {
   display: block;
+}
+
+div span:nth-child(3) {
+  cursor: pointer;
 }

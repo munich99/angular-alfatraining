@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CartService {
 
-  items = [];
+  items = [];  
 
   constructor(public http:HttpClient) { }
 
@@ -22,9 +22,7 @@ export class CartService {
     return this.items=[];
   }
 
-  removeArticle(orderId){
-
-    //alert(orderId);
+  removeArticle(orderId){    
     this.items.splice(orderId,1);
   }
 

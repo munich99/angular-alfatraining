@@ -5,7 +5,7 @@
   color: #616161;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;  
 }
 
 body {
@@ -137,9 +137,8 @@ app-top-bar h1 {
   background-color: #EEEEEE;
 }
 
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+/* hinzugefügte Styles */
+h4 span{
+  font-size: 0.75em;
+  display:block;
+}
