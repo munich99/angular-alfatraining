@@ -12,6 +12,7 @@ import { CartService } from '../cart.service';
 export class CartComponent {
 
   items;  
+  totalprice;
   checkoutForms;
   thx:boolean = false;
 
@@ -19,29 +20,33 @@ export class CartComponent {
     private cartService:CartService,
     private  formBuilder:FormBuilder) {       
       this.items = this.cartService.getItems();
+      this.totalprice = this.cartService.totalPrice();
+      // console.log(this.items.lenght,"länge")
       
       // Variablen Deklaration für Lieferadresse aus dme Formular
       this.checkoutForms = this.formBuilder.group(  {name:'', adress:''}  );      
-    }
+  }    
 
-    onSubmit(customerData){
-      // Verbraucher Daten werden an den Server/Backend geschickt
-      console.warn("Ihre Bestellung wurde jetz übermittelt", customerData)
-      // Löschen der gesamten Bestellung
-      this.clearList();
-      // Löschen der Zustellungs Informationen
-      this.checkoutForms.reset();
-      // dankes Text
-      this.thx = !this.thx;
-    }
+  onSubmit(customerData){
+    // Verbraucher Daten werden an den Server/Backend geschickt
+    console.warn("Ihre Bestellung wurde jetz übermittelt", customerData)
+    // Löschen der gesamten Bestellung
+    this.clearList();
+    // Löschen der Zustellungs Informationen
+    this.checkoutForms.reset();
+    // dankes Text
+    this.thx = !this.thx;
+  }
 
-    clearList(){
-      // Bestellliste löschen
-      this.items = this.cartService.removeItems();
-    }
+  clearList(){
+    // Bestellliste löschen
+    this.items = this.cartService.removeItems();
+  }
 
-    clearArticle(orderId){
-      // Artikel löschen
-      this.cartService.removeArticle(orderId);
-    }
+  clearArticle(orderId){
+    // Artikel löschen
+    this.cartService.removeArticle(orderId);
+  }
+
+    
 }
