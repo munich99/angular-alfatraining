@@ -32,6 +32,8 @@ export class CartService {
 
   removeArticle(orderId){    
     this.items.splice(orderId,1);
+    this.totalprice = this.totalprice - 200; 
+    console.log(this.totalprice,"abgezogen");
   }
 
   getShippingPrices(){

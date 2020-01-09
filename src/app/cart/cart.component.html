@@ -5,9 +5,10 @@
 <div class="cart-item" *ngFor="let item of items; index as orderId">
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
-  <span (click)="clearArticle(orderId)">[x]</span>
+  <span (click)="clearArticle(orderId)">[x]</span>  
 </div>
 <div>{{totalprice}} haha</div>
+
 <form *ngIf="items != 0" [formGroup]="checkoutForms" (ngSubmit)="onSubmit(checkoutForms.value)">
   <div> 
     <label for="name"> <!-- label auch für Barrierefreiheit/Reader-->

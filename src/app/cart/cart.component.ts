@@ -22,7 +22,7 @@ export class CartComponent {
       this.items = this.cartService.getItems();
       this.totalprice = this.cartService.totalPrice();
       // console.log(this.items.lenght,"länge")
-      
+      console.log(this.totalprice,"abgezogen cart");
       // Variablen Deklaration für Lieferadresse aus dme Formular
       this.checkoutForms = this.formBuilder.group(  {name:'', adress:''}  );      
   }    
