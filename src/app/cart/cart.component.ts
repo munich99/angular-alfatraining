@@ -38,4 +38,9 @@ export class CartComponent {
       // Bestellliste löschen
       this.items = this.cartService.removeItems();
     }
+
+    clearArticle(orderId){
+      // Artikel löschen
+      this.cartService.removeArticle(orderId);
+    }
 }

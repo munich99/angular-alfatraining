@@ -1,10 +1,11 @@
 <h3>Einkaufswagen</h3>
 
-<a [routerLink]="['/shipping']">Versandkosten</a>
 
-<div class="cart-item" *ngFor="let item of items">
+
+<div class="cart-item" *ngFor="let item of items; index as orderId">
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
+  <span (click)="clearArticle(orderId)">{{ orderId }}</span>
 </div>
 <form [formGroup]="checkoutForms" (ngSubmit)="onSubmit(checkoutForms.value)">
   <div> 
@@ -23,5 +24,6 @@
   <button class="button" type="submit">Bestellung verbindlich abgeben</button>
 </form>
 
-<a type="button" (click)="clearList()">Bestellliste löschen</a>
+<a [routerLink]="['/shipping']">Versandkosten</a>
 <a [routerLink]="['/']">Zurück zu den Artikeln</a>
+<a type="button" (click)="clearList()">Bestellliste löschen</a>

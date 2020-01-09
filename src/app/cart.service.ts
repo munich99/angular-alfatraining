@@ -22,6 +22,12 @@ export class CartService {
     return this.items=[];
   }
 
+  removeArticle(orderId){
+
+    //alert(orderId);
+    this.items.splice(orderId,1);
+  }
+
   getShippingPrices(){
     return this.http.get('/assets/shipping.json');
   }
