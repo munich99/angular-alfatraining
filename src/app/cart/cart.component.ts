@@ -44,6 +44,8 @@ export class CartComponent {
   }
 
   clearArticle(orderId){
+    // Geasamtpreis anpassen
+    this.totalprice = this.totalprice - this.items[orderId].price 
     // Artikel löschen
     this.cartService.removeArticle(orderId);
   }
