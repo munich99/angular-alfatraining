@@ -13,6 +13,7 @@ export class ShippingComponent implements OnInit {
   constructor( private cartService:CartService ) { }
 
   ngOnInit() {
+    // holt über Service cartService Verandkosten(shipping.json)
     this.shippingCosts = this.cartService.getShippingPrices();
     console.log(this.shippingCosts,"shippingCosts")
   }

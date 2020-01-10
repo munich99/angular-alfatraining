@@ -7,7 +7,7 @@ app-root/ app.component.HTML
     
     app-product-list/ product-list.component.html --> zeigt Produkte an
 
-      app-product-alerts/ product-alerts.component.html --> zusätzliche, zu hervorhebende Produkt anmerkungen
+      app-product-alerts/ product-alerts.component.html --> zusätzliche, zu hervorhebende Produkt anmerkungen, wenn Preis größer als
 
       app-product-details/ app-product-details.component.html --> einzelne Produkte mit Bestellmöglichkeit
 

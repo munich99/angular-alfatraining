@@ -9,8 +9,8 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class ProductAlertsComponent implements OnInit {
 
-  @Input() product;
-  @Output() notify = new EventEmitter();
+  @Input() product; // holt sich die Preise von product-detals
+  @Output() notify = new EventEmitter(); // übergibt Event zum Klicken und HTML Button an product-details, wenn Preis größer als 700
 
   constructor() { }
 

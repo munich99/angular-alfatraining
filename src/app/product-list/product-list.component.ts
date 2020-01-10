@@ -10,11 +10,11 @@ export class ProductListComponent {
   products = products;
 
   share() {
-    window.alert('Produkt wurde geteilt');
+    window.alert('Produkt wurde geteilt'); // für Socialmdedia API
   }
 
   onNotify(){
-    window.alert('Wir werden Sie über weitere Details informieren');
+    window.alert('Wir werden Sie über weitere Details informieren'); // Für Info Mail API
   }
 }
 
