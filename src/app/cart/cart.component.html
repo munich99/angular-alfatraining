@@ -8,12 +8,12 @@
   <p class="klick" (click)="clearArticle(orderId)">[x]</p>  
 </div>
 <div *ngIf="items != 0">
-  <div class="cart-item" *ngFor="let item of items; index as orderId">
+  <div class="cart-item" style="font-weight:bold" *ngFor="let item of items; index as orderId">
     <p>Preis Gesamt</p>
     <p>{{ totalprice | currency }}</p>
     <p>&nbsp;</p>  
   </div>
-  <form *ngIf="items != 0" [formGroup]="checkoutForms" (ngSubmit)="onSubmit(checkoutForms.value)">
+  <form [formGroup]="checkoutForms" (ngSubmit)="onSubmit(checkoutForms.value)">
     <div> 
       <label for="name"> <!-- label auch für Barrierefreiheit/Reader-->
         Name
