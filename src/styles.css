@@ -142,3 +142,7 @@ h4 span{
   font-size: 0.75em;
   display:block;
 }
+
+a {
+  display: block;
+}

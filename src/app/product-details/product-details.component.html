@@ -5,4 +5,5 @@
   <p>{{ product.description }}</p>
   <button (click)="addToCart(product)">Kaufen</button>
 </div>
+<a *ngIf="items !=0" [routerLink]="['/cart']">Warenkorb anschauen</a>
 <a [routerLink]="['/']">Zurück zu den Artikeln</a>

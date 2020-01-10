@@ -18,7 +18,8 @@ export class CartComponent {
 
   constructor(
     private cartService:CartService,
-    private  formBuilder:FormBuilder) {       
+    private  formBuilder:FormBuilder) {  
+      // holt Bestellliste und Gesamtpreis vom CartService-Methode    
       this.items = this.cartService.getItems();
       this.totalprice = this.cartService.totalPrice();
       // console.log(this.items.lenght,"länge")

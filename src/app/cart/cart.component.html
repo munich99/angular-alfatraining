@@ -7,28 +7,32 @@
   <p>{{ item.price | currency }}</p>
   <p class="klick" (click)="clearArticle(orderId)">[x]</p>  
 </div>
-<div *ngIf="items != 0">{{totalprice}} haha</div>
-
-<form *ngIf="items != 0" [formGroup]="checkoutForms" (ngSubmit)="onSubmit(checkoutForms.value)">
-  <div> 
-    <label for="name"> <!-- label auch für Barrierefreiheit/Reader-->
-      Name
-    </label>
-    <input id="name" type="text" formControlName="name">
+<div *ngIf="items != 0">
+  <div class="cart-item" *ngFor="let item of items; index as orderId">
+    <p>Preis Gesamt</p>
+    <p>{{ totalprice | currency }}</p>
+    <p>&nbsp;</p>  
   </div>
-  <div>
-    <label for="adress">
-      Anschrift
-     </label>
-      <input id="adress" type="text" formControlName="adress">   
-  </div>
+  <form *ngIf="items != 0" [formGroup]="checkoutForms" (ngSubmit)="onSubmit(checkoutForms.value)">
+    <div> 
+      <label for="name"> <!-- label auch für Barrierefreiheit/Reader-->
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+    <div>
+      <label for="adress">
+        Anschrift
+      </label>
+        <input id="adress" type="text" formControlName="adress">   
+    </div>
 
-  <button class="button" type="submit">Bestellung verbindlich abgeben</button>
-</form>
+    <button class="button" type="submit">Bestellung verbindlich abgeben</button>
+  </form>
+</div>
 
 <div *ngIf="thx">
-  <h4>Vielen Dank für Ihre Bestellung!<span>Sie erhalten Ihren Artikel in kürze</span></h4>
-  
+  <h4>Vielen Dank für Ihre Bestellung!<span>Sie erhalten Ihren Artikel in kürze</span></h4>    
 </div>
 
 <a [routerLink]="['/shipping']">Versandkosten</a>
