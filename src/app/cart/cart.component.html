@@ -3,11 +3,11 @@
 
 
 <div class="cart-item" *ngFor="let item of items; index as orderId">
-  <span>{{ item.name }}</span>
-  <span>{{ item.price | currency }}</span>
-  <span (click)="clearArticle(orderId)">[x]</span>  
+  <p>{{ item.name }}</p>
+  <p>{{ item.price | currency }}</p>
+  <p class="klick" (click)="clearArticle(orderId)">[x]</p>  
 </div>
-<div>{{totalprice}} haha</div>
+<div *ngIf="items != 0">{{totalprice}} haha</div>
 
 <form *ngIf="items != 0" [formGroup]="checkoutForms" (ngSubmit)="onSubmit(checkoutForms.value)">
   <div> 

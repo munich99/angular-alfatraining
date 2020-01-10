@@ -6,6 +6,13 @@ a {
   display: block;
 }
 
-div span:nth-child(3) {
+.klick {
   cursor: pointer;
+}
+
+div p{
+  margin:0;
+}
+div p:first-child {
+  width:120px;
 }
