@@ -1,6 +1,6 @@
 <h3>Versandkosten</h3>
 
-<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async" (click)="changeShipping(shipping.price)">
   <span>{{ shipping.type }}</span>
   <span>{{ shipping.price | currency }}</span>
 </div>

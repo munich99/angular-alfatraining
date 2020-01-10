@@ -28,15 +28,20 @@ export class CartComponent {
       this.checkoutForms = this.formBuilder.group(  {name:'', adress:''}  );      
   }    
 
-  onSubmit(customerData){
-    // Verbraucher Daten werden an den Server/Backend geschickt
-    console.warn("Ihre Bestellung wurde jetz übermittelt", customerData)
-    // Löschen der gesamten Bestellung
-    this.clearList();
-    // Löschen der Zustellungs Informationen
-    this.checkoutForms.reset();
-    // dankes Text
-    this.thx = !this.thx;
+  onSubmit(customerData){    
+    console.log(customerData, "Formulardaten")
+    if(customerData.name != "" && customerData.adress != ""){      
+      // Verbraucher Daten werden an den Server/Backend geschickt
+      console.warn("Ihre Bestellung wurde jetz übermittelt", customerData)
+      // Löschen der gesamten Bestellung
+      this.clearList();
+      // Löschen der Zustellungs Informationen
+      this.checkoutForms.reset();
+      // dankes Text
+      this.thx = !this.thx;
+    } else{
+      alert("bitte beide Felder vollständig ausfüllen");
+    }
   }
 
   clearList(){

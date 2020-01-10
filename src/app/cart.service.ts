@@ -8,6 +8,7 @@ export class CartService {
 
   items = [];  
   totalprice = 0;  
+  shippingprice = 10;
 
   constructor(public http:HttpClient) { }
 
@@ -38,6 +39,11 @@ export class CartService {
 
   getShippingPrices(){
     return this.http.get('/assets/shipping.json');
+  }
+
+  addToPrice(shippingcost){
+    console.log(shippingcost);
+    //this.shippingprice = shippingcost;
   }
 
 }

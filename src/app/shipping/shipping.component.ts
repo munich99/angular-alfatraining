@@ -18,4 +18,8 @@ export class ShippingComponent implements OnInit {
     console.log(this.shippingCosts,"shippingCosts")
   }
 
+  changeShipping(){
+    
+  }
+
 }
